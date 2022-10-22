@@ -1,9 +1,9 @@
 #include "PlayerGunComponent.h"
 #include"InputState.h"
 #include"BulletActor.h"
-#include"Actor.h"
+#include"ShipActor.h"
 
-PlayerGunComponent::PlayerGunComponent(Actor* owner, GunBangInterFace bang, GunGenerateInterface generate):
+PlayerGunComponent::PlayerGunComponent(ShipActor* owner, GunBangInterFace bang, GunGenerateInterface generate):
 	GunComponent(owner,bang,generate)
 {
 }

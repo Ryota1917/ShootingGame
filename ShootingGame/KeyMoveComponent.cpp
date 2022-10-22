@@ -9,28 +9,32 @@ KeyMoveComponent::KeyMoveComponent(MoveActor* owner):
 
 void KeyMoveComponent::ProcessInput(const InputState& state)
 {
-	bool isChange = false;
+	bool isChangeHori = false;
+	bool isChangeVer = false;
 	Vector2 nVelo = mMoveActor->GetVelo();
 
 	if (state.Keyboard.GetKeyValue(SDL_SCANCODE_W)) {
 		nVelo.y += -mSpeed.y;
-		isChange = true;
+		isChangeVer = true;
 	}
 	if(state.Keyboard.GetKeyValue(SDL_SCANCODE_S)){
 		nVelo.y += mSpeed.y;
-		isChange = true;
+		isChangeVer = true;
 	}
 	if(state.Keyboard.GetKeyValue(SDL_SCANCODE_D)){
 		nVelo.x += mSpeed.x;
-		isChange = true;
+		isChangeHori = true;
 	}
 	if(state.Keyboard.GetKeyValue(SDL_SCANCODE_A)){
 		nVelo.x += -mSpeed.x;
-		isChange = true;
+		isChangeHori = true;
 	}
 
-	if (!isChange) {
-		nVelo *= 0.9f;
+	if (!isChangeHori) {
+		nVelo.x *= 0.9f;
+	}
+	if (!isChangeVer) {
+		nVelo.y *= 0.9f;
 	}
 
 	if (Math::Abs(nVelo.x) > mMaxSpeed.x) {
