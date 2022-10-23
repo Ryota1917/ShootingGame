@@ -15,5 +15,5 @@ PlayerShip::PlayerShip(Game* game):
 	c->SetSpeed(Vector2(10, 10));
 	new SpriteDrawer("../Assets/Test12.png", this, 200);
 	new CircleCollisionComponent(this, 12);
-	new PlayerGunComponent(this,GunBangInterFace(),GunGenerateInterface());
+	new PlayerGunComponent(this,new GunBangInterFace(), new GunGenerateInterface());
 }

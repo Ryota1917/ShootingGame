@@ -3,7 +3,7 @@
 #include"BulletActor.h"
 #include"ShipActor.h"
 
-PlayerGunComponent::PlayerGunComponent(ShipActor* owner, GunBangInterFace bang, GunGenerateInterface generate):
+PlayerGunComponent::PlayerGunComponent(ShipActor* owner, GunBangInterFace* bang, GunGenerateInterface* generate):
 	GunComponent(owner,bang,generate)
 {
 }

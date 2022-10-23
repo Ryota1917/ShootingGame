@@ -7,7 +7,8 @@
 
 class GunComponent :public Component {
 public:
-	GunComponent(class ShipActor* owner, GunBangInterFace bang, GunGenerateInterface generate);
+	GunComponent(class ShipActor* owner, GunBangInterFace* bang, GunGenerateInterface* generate);
+	virtual ~GunComponent();
 
 	void Update(float deltaTime)override;
 
@@ -18,6 +19,6 @@ private:
 	std::string mBulletName;
 	BulletActor::BulletType mType;
 
-	GunBangInterFace mBang;
-	GunGenerateInterface mGenerate;
+	GunBangInterFace* mBang;
+	GunGenerateInterface* mGenerate;
 };

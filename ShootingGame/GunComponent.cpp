@@ -1,9 +1,15 @@
 #include "GunComponent.h"
 #include"ShipActor.h"
 
-GunComponent::GunComponent(ShipActor* owner, GunBangInterFace bang, GunGenerateInterface generate):
-	Component(owner),mBang(bang),mGenerate(generate)
+GunComponent::GunComponent(ShipActor* owner, GunBangInterFace* bang, GunGenerateInterface* generate):
+	Component(owner),mBang(bang),mGenerate(generate),mBulletName("normal"),mType(BulletActor::BulletType::EEnemy)
 {
+}
+
+GunComponent::~GunComponent()
+{
+	delete mBang;
+	delete mGenerate;
 }
 
 BulletActor* GunComponent::BulletFactory(const std::string& bulletName, BulletActor::BulletType type)
@@ -18,8 +24,8 @@ BulletActor* GunComponent::BulletFactory(const std::string& bulletName, BulletAc
 
 
 void GunComponent :: Update(float deltaTime) {
-	if (mBang.Bang(deltaTime)) {
-		mGenerate.Generate(this);
+	if (mBang->Bang(deltaTime)) {
+		mGenerate->Generate(this);
 	}
 }
 
