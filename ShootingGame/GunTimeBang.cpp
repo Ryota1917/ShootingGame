@@ -10,7 +10,6 @@ bool GunTimeBang::Bang(float deltaTime)
 	mCurrentTime += deltaTime;
 	if (mCurrentTime > mLimitTime) {
 		mCurrentTime = 0;
-		SDL_Log("Bang!!");
 		return true;
 	}
 	return  false;

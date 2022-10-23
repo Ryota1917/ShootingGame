@@ -1,6 +1,10 @@
 #pragma once
 #include"Actor.h"
 
+/// <summary>
+/// 動かしたいActor用のクラス
+/// このActorは自動的にMoveComponentを所持します
+/// </summary>
 class MoveActor :public Actor {
 public:
 	MoveActor(class Game* game);
