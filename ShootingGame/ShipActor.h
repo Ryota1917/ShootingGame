@@ -3,7 +3,7 @@
 
 class ShipActor :public MoveActor {
 public:
-	ShipActor(class Game* game);
+	ShipActor(class Game* game, int maxHp = 3);
 	void UpdateActor(float deltaTime)override;
 
 	virtual void Damage(class BulletActor* bullet);

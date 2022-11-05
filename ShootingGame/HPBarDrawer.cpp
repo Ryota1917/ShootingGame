@@ -15,7 +15,7 @@ void HPBarDrawer::Draw(SDL_Renderer* renderer)
 	SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
 	SDL_RenderDrawRect(renderer, &r);
 
-	int range = 18-18 * mShip->GetHP() / 3;
+	int range = 18-18 * mShip->GetHP() / mShip->GetMaxHp();
 	r.w = static_cast<int>(18-range);
 	r.h = static_cast<int>(3);
 	r.x = static_cast<int>(mOwner->GetPosition().x - r.w / 2 - range / 2);

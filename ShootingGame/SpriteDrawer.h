@@ -1,5 +1,6 @@
 #pragma once
 #include"Drawer.h"
+#include"Math.h"
 #include"SDL.h"
 #include<string>
 
@@ -17,9 +18,13 @@ public:
 	int GetWidth()const { return mTexWidth; }
 	void SetWidth(int width) { mTexWidth = width; }
 
+	void SetOffset(const Vector2& offset) { mOffset = offset; }
+
 protected:
 	SDL_Texture* mTexture;
 
 	int mTexHeight;
 	int mTexWidth;
+
+	Vector2 mOffset;
 };

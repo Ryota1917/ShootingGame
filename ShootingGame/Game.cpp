@@ -5,6 +5,7 @@
 #include"InputSystem.h"
 #include"KeyboardState.h"
 #include"PhysWorld.h"
+#include"GameSceneManeger.h"
 #include<vector>
 #include <SDL_image.h>
 
@@ -15,6 +16,7 @@ Game::Game()
 	, mTickCount(0)
 	, mDrawers([](const Drawer* l, const Drawer* r) {return l->GetOrder() < r->GetOrder(); })
 	, mPhysWorld(nullptr)
+	, mScene(nullptr)
 {
 
 }
@@ -74,6 +76,11 @@ bool Game::Initialize() {
 		return false;
 	}
 
+	mScene = new GameSceneManeger(this);
+	if (!mScene) {
+		SDL_Log("Failed to initialize GameScene");
+		return false;
+	}
 
 	LoadData();
 
@@ -100,6 +107,8 @@ void Game::Shutdown()
 	delete mInputSystem;
 
 	delete mPhysWorld;
+
+	delete mScene;
 
 	IMG_Quit();
 	SDL_DestroyRenderer(mRenderer);
@@ -238,6 +247,13 @@ void Game::RemoveActor(Actor* actor) {
 	{
 		std::iter_swap(iter, mActors.end() - 1);
 		mActors.pop_back();
+	}
+}
+
+void Game::RemoveAllActor()
+{
+	while (!mActors.empty()) {
+		delete mActors.back();
 	}
 }
 

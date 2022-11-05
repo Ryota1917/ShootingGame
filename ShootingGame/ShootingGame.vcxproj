@@ -146,6 +146,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Actor.cpp" />
+    <ClCompile Include="AutoMoveComponent.cpp" />
     <ClCompile Include="BulletActor.cpp" />
     <ClCompile Include="CircleCollisionComponent.cpp" />
     <ClCompile Include="Collision2D_AABB.cpp" />
@@ -155,9 +156,16 @@
     <ClCompile Include="CollisionComponent.cpp" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="Drawer.cpp" />
+    <ClCompile Include="EndActor.cpp" />
+    <ClCompile Include="EndScene.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameSceneManeger.cpp" />
+    <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="Game_Load.cpp" />
     <ClCompile Include="GunComponent.cpp" />
+    <ClCompile Include="GunSingleGenerate.cpp" />
+    <ClCompile Include="GunTimeBang.cpp" />
+    <ClCompile Include="HPBarDrawer.cpp" />
     <ClCompile Include="InputSystem.cpp" />
     <ClCompile Include="KeyboardState.cpp" />
     <ClCompile Include="KeyMoveComponent.cpp" />
@@ -167,13 +175,20 @@
     <ClCompile Include="MoveComponent.cpp" />
     <ClCompile Include="PhysWorld.cpp" />
     <ClCompile Include="PlayerGunComponent.cpp" />
+    <ClCompile Include="PlayerHeartDrawer.cpp" />
     <ClCompile Include="PlayerShip.cpp" />
+    <ClCompile Include="PlayerShipSpriteDrawer.cpp" />
+    <ClCompile Include="PlayScene.cpp" />
     <ClCompile Include="RockActor.cpp" />
+    <ClCompile Include="ScrollSpriteDrawerY.cpp" />
     <ClCompile Include="ShipActor.cpp" />
     <ClCompile Include="SpriteDrawer.cpp" />
+    <ClCompile Include="TitleActor.cpp" />
+    <ClCompile Include="TitleScene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actor.h" />
+    <ClInclude Include="AutoMoveComponent.h" />
     <ClInclude Include="BulletActor.h" />
     <ClInclude Include="ButtonState.h" />
     <ClInclude Include="CircleCollisionComponent.h" />
@@ -181,10 +196,17 @@
     <ClInclude Include="CollisionComponent.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="Drawer.h" />
+    <ClInclude Include="EndActor.h" />
+    <ClInclude Include="EndScene.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="GameSceneManeger.h" />
+    <ClInclude Include="GameScene.h" />
     <ClInclude Include="GunBangInterface.h" />
     <ClInclude Include="GunComponent.h" />
     <ClInclude Include="GunGenerateInterface.h" />
+    <ClInclude Include="GunSingleGenerate.h" />
+    <ClInclude Include="GunTimeBang.h" />
+    <ClInclude Include="HPBarDrawer.h" />
     <ClInclude Include="InputState.h" />
     <ClInclude Include="InputSystem.h" />
     <ClInclude Include="KeyboardState.h" />
@@ -194,11 +216,17 @@
     <ClInclude Include="MoveComponent.h" />
     <ClInclude Include="PhysWorld.h" />
     <ClInclude Include="PlayerGunComponent.h" />
+    <ClInclude Include="PlayerHeartDrawer.h" />
     <ClInclude Include="PlayerShip.h" />
+    <ClInclude Include="PlayerShipSpriteDrawer.h" />
+    <ClInclude Include="PlayScene.h" />
     <ClInclude Include="RockActor.h" />
+    <ClInclude Include="ScrollSpriteDrawerY.h" />
     <ClInclude Include="ShipActor.h" />
     <ClInclude Include="SingleStraightGun.h" />
     <ClInclude Include="SpriteDrawer.h" />
+    <ClInclude Include="TitleActor.h" />
+    <ClInclude Include="TitleScene.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="libpng16-16.dll" />

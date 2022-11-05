@@ -12,8 +12,8 @@ void PlayerHeartDrawer::Draw(SDL_Renderer* renderer)
 		SDL_Rect r;
 		r.w = static_cast<int>(mTexWidth);
 		r.h = static_cast<int>(mTexHeight);
-		r.x = static_cast<int>(0);
-		r.y = static_cast<int>(50);
+		r.x = static_cast<int>(-20);
+		r.y = static_cast<int>(20);
 		for (int i = 0; i < mPlayerShip->GetHP(); i++) {
 			r.x += 40;
 			SDL_RenderCopyEx(renderer, mTexture, nullptr, &r, -Math::ToDegrees(mOwner->GetRotate()), nullptr, SDL_FLIP_NONE);

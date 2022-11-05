@@ -23,6 +23,7 @@ public:
 	// Actor Controll
 	void AddActor(class Actor* actor);
 	void RemoveActor(class Actor* actor);
+	void RemoveAllActor();
 
 	// Drawer Conrtoll
 	void AddDrawer(class Drawer* drawer);
@@ -32,6 +33,8 @@ public:
 	SDL_Texture* GetTexture(const std::string& fileName);
 
 	class PhysWorld* GetPhysWorld()const { return mPhysWorld; }
+
+	class GameSceneManeger* GetGameScene()const { return mScene; }
 
 private:
 	void ProcessInput();
@@ -62,4 +65,6 @@ private:
 
 	unsigned mTickCount;
 	GameState mGameState;
+
+	class GameSceneManeger* mScene;
 };

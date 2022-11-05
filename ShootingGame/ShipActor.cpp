@@ -2,8 +2,8 @@
 #include"BulletActor.h"
 #include "GunComponent.h"
 
-ShipActor::ShipActor(Game* game):
-	MoveActor(game),mHp(3)
+ShipActor::ShipActor(Game* game, int maxHp):
+	MoveActor(game),mHp(maxHp),mMaxHp(maxHp)
 {
 }
 

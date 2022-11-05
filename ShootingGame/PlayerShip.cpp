@@ -6,6 +6,7 @@
 #include"GunBangInterface.h"
 #include"GunGenerateInterface.h"
 #include"PlayerHeartDrawer.h"
+#include"GameSceneManeger.h"
 
 PlayerShip::PlayerShip(Game* game):
 	ShipActor(game),mShipState(EActive),mDamagedTime(0.0f)
@@ -13,8 +14,8 @@ PlayerShip::PlayerShip(Game* game):
 	SetPosition(Vector2(500, 600));
 	auto c = new KeyMoveComponent(this);
 	c->SetSpeed(Vector2(10, 10));
-	new PlayerShipSpriteDrawer("../Assets/Test12.png", this, 200);
-	new CircleCollisionComponent(this, 12);
+	new PlayerShipSpriteDrawer("../Assets/Ship13.png", this, 200);
+	new CircleCollisionComponent(this, 13);
 	new PlayerGunComponent(this,new GunBangInterFace(), new GunGenerateInterface());
 	new PlayerHeartDrawer("../Assets/hart.png", this, 300);
 }
@@ -23,7 +24,7 @@ void PlayerShip::UpdateActor(float deltaTime)
 {
 	if (mHp <= 0) {
 		SetState(State::EDead);
-		//TODO: game->EndScene;
+		GetGame()->GetGameScene()->SetNextState();
 	}
 
 	if (mShipState == EDamaged) {
