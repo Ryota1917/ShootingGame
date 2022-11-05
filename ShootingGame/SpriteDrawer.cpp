@@ -7,6 +7,10 @@ SpriteDrawer::SpriteDrawer(const std::string& fileName, Actor* owner, int order)
 	SetTexture(mOwner->GetGame()->GetTexture(fileName));
 }
 
+SpriteDrawer::~SpriteDrawer()
+{
+}
+
 void SpriteDrawer::Draw(SDL_Renderer* renderer) {
 	if (mTexture) {
 		SDL_Rect r;

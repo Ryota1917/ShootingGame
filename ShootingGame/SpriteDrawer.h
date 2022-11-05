@@ -6,6 +6,7 @@
 class SpriteDrawer:public Drawer {
 public:
 	SpriteDrawer(const std::string& fileName, class Actor* owner, int order = 100);
+	~SpriteDrawer();
 
 	void Draw(SDL_Renderer* renderer)override;
 
@@ -16,7 +17,7 @@ public:
 	int GetWidth()const { return mTexWidth; }
 	void SetWidth(int width) { mTexWidth = width; }
 
-private:
+protected:
 	SDL_Texture* mTexture;
 
 	int mTexHeight;
