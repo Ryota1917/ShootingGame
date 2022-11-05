@@ -10,10 +10,12 @@ public:
 
 	int GetHP()const { return mHp; }
 	void SetHP(int hp) { mHp = hp; }
+	int GetMaxHp()const { return mMaxHp; }
 
 	void SetGun(class GunComponent* gun);
 
-private:
+protected:
 	int mHp;
+	int mMaxHp;
 	class GunComponent* mGun;
 };

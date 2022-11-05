@@ -15,10 +15,10 @@ BulletActor::BulletActor(Game* game, BulletType type):
 			switch (mType) {
 			case EPlayer: {
 				auto ship = dynamic_cast<ShipActor*>(other);
-				SDL_Log("Collision!");
 				if (ship == NULL) {
 					return;
 				}
+				SDL_Log("Collision ShipActor and Bullt Eplayer!");
 				ship->Damage(this);
 				SetState(State::EDead);
 				break;
@@ -26,10 +26,10 @@ BulletActor::BulletActor(Game* game, BulletType type):
 
 			case EEnemy: {
 				auto pship = dynamic_cast<PlayerShip*>(other);
-				SDL_Log("Collision!");
 				if (pship == NULL) {
 					return;
 				}
+				SDL_Log("Collision PlayerShip and Bullt EEnemy!");
 				pship->Damage(this);
 				SetState(State::EDead);
 				break;

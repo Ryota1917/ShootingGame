@@ -14,7 +14,7 @@ public:
 
 	BulletActor* BulletCreate();
 
-private:
+protected:
 	BulletActor* BulletFactory(const std::string& bulletName, BulletActor::BulletType type);
 	std::string mBulletName;
 	BulletActor::BulletType mType;

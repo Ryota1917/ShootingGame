@@ -3,7 +3,7 @@
 #include "GunComponent.h"
 
 ShipActor::ShipActor(Game* game):
-	MoveActor(game),mHp(10)
+	MoveActor(game),mHp(3)
 {
 }
 
