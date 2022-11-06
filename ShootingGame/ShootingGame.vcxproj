@@ -88,12 +88,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\include;%(AdditionalIncludeDirectories) </AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -122,10 +122,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)include;%(AdditionalIncludeDirectories) </AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>D:\gomi-develop\C++\ShootingGame\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -158,6 +161,7 @@
     <ClCompile Include="Drawer.cpp" />
     <ClCompile Include="EndActor.cpp" />
     <ClCompile Include="EndScene.cpp" />
+    <ClCompile Include="EnemyManegerActor.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameSceneManeger.cpp" />
     <ClCompile Include="GameScene.cpp" />
@@ -179,7 +183,7 @@
     <ClCompile Include="PlayerShip.cpp" />
     <ClCompile Include="PlayerShipSpriteDrawer.cpp" />
     <ClCompile Include="PlayScene.cpp" />
-    <ClCompile Include="RockActor.cpp" />
+    <ClCompile Include="EnemyShipActor.cpp" />
     <ClCompile Include="ScrollSpriteDrawerY.cpp" />
     <ClCompile Include="ShipActor.cpp" />
     <ClCompile Include="SpriteDrawer.cpp" />
@@ -198,6 +202,7 @@
     <ClInclude Include="Drawer.h" />
     <ClInclude Include="EndActor.h" />
     <ClInclude Include="EndScene.h" />
+    <ClInclude Include="EnemyManegerActor.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameSceneManeger.h" />
     <ClInclude Include="GameScene.h" />
@@ -220,7 +225,8 @@
     <ClInclude Include="PlayerShip.h" />
     <ClInclude Include="PlayerShipSpriteDrawer.h" />
     <ClInclude Include="PlayScene.h" />
-    <ClInclude Include="RockActor.h" />
+    <ClInclude Include="RandomXor.h" />
+    <ClInclude Include="EnemyShipActor.h" />
     <ClInclude Include="ScrollSpriteDrawerY.h" />
     <ClInclude Include="ShipActor.h" />
     <ClInclude Include="SingleStraightGun.h" />
