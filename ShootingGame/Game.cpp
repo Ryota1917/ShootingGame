@@ -252,8 +252,8 @@ void Game::RemoveActor(Actor* actor) {
 
 void Game::RemoveAllActor()
 {
-	while (!mActors.empty()) {
-		delete mActors.back();
+	for (auto actor : mActors) {
+		actor->SetState(Actor::State::EDead);
 	}
 }
 
