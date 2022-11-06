@@ -6,7 +6,7 @@
 /// </summary>
 class AutoMoveComponent :public Component {
 public:
-	AutoMoveComponent(class MoveActor* owner);
+	AutoMoveComponent(class MoveActor* owner, int moveWidth = 300);
 
 	void Update(float deltaTime)override;
 

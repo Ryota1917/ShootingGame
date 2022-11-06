@@ -8,6 +8,7 @@
 class MoveActor :public Actor {
 public:
 	MoveActor(class Game* game);
+	virtual ~MoveActor() {};
 
 	const Vector2& GetVelo()const { return mVelocity; }
 	void SetVelo(const Vector2& velo) { mVelocity = velo; }

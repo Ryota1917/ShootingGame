@@ -3,7 +3,6 @@
 #include"CircleCollisionComponent.h"
 #include"ShipActor.h"
 #include"PlayerShip.h"
-#include"RockActor.h"
 
 BulletActor::BulletActor(Game* game, BulletType type):
 	MoveActor(game),mAttack(1), mType(type)
@@ -18,7 +17,7 @@ BulletActor::BulletActor(Game* game, BulletType type):
 				if (ship == NULL) {
 					return;
 				}
-				SDL_Log("Collision ShipActor and Bullt Eplayer!");
+				//SDL_Log("Collision ShipActor and Bullt Eplayer!");
 				ship->Damage(this);
 				SetState(State::EDead);
 				break;
@@ -29,7 +28,7 @@ BulletActor::BulletActor(Game* game, BulletType type):
 				if (pship == NULL) {
 					return;
 				}
-				SDL_Log("Collision PlayerShip and Bullt EEnemy!");
+				//SDL_Log("Collision PlayerShip and Bullt EEnemy!");
 				pship->Damage(this);
 				SetState(State::EDead);
 				break;

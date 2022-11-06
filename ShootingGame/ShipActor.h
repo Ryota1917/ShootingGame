@@ -4,6 +4,8 @@
 class ShipActor :public MoveActor {
 public:
 	ShipActor(class Game* game, int maxHp = 3);
+	virtual ~ShipActor() {};
+
 	void UpdateActor(float deltaTime)override;
 
 	virtual void Damage(class BulletActor* bullet);

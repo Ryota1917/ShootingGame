@@ -2,12 +2,10 @@
 #include"GameSceneManeger.h"
 #include"Game.h"
 #include"PlayerShip.h"
-#include"RockActor.h"
-#include"GunComponent.h"
-#include"GunTimeBang.h"
-#include"GunSingleGenerate.h"
-#include"AutoMoveComponent.h"
+#include"EnemyShipActor.h"
 #include"ScrollSpriteDrawerY.h"
+#include"EnemyManegerActor.h"
+#include"SpriteDrawer.h"
 
 PlayScene::PlayScene(GameSceneManeger* maneger):
 	GameScene(maneger)
@@ -18,27 +16,30 @@ void PlayScene::OnEnter()
 {
 	Game* game = mManeger->GetGame();
 
-	new PlayerShip(game);
-
-	auto r = new RockActor(game);
-	r->SetPosition(Vector2(400, 150));
-	new GunComponent(r, new GunTimeBang(1.0f), new GunSingleGenerate(Vector2(0, 30), Vector2(0, 100)));
-
-
-	r = new RockActor(game);
-	r->SetPosition(Vector2(500, 100));
-	new GunComponent(r, new GunTimeBang(0.5f), new GunSingleGenerate(Vector2(0, 30), Vector2(0, 100)));
-	new AutoMoveComponent(r);
-
-
-	r = new RockActor(game);
-	r->SetPosition(Vector2(700, 250));
-	new GunComponent(r, new GunTimeBang(1.0f), new GunSingleGenerate(Vector2(0, 30), Vector2(0, 100)));
+	auto ps = new PlayerShip(game);
+	ps->SetHP(1);
 
 	Actor* bg = new Actor(game);
 	new ScrollSpriteDrawerY(100.0f, "../Assets/star_map.png", bg, 10);
+
+	mEnemyManeger = new EnemyManegerActor(game);
+	for (int i = 0; i < 3; i++) {
+		mEnemyManeger->Generate();
+	}
 }
 
 void PlayScene::OnExit()
 {
+	//SDL_Log("Your delete enemy count: %d !!!", mEnemyManeger->GetDeleteEnemyNum());
+	auto scoreActor = new Actor(mManeger->GetGame());
+	auto sd = new SpriteDrawer("../Assets/your_score.png", scoreActor, 500);
+	sd->SetOffset(Vector2(300, 100));
+
+	int score = mEnemyManeger->GetDeleteEnemyNum();
+
+	sd = new SpriteDrawer("../Assets/"+std::to_string(score/10)+".png", scoreActor, 500);
+	sd->SetOffset(Vector2(650, 100));
+
+	sd = new SpriteDrawer("../Assets/"+std::to_string(score%10)+".png", scoreActor, 500);
+	sd->SetOffset(Vector2(730, 100));
 }

@@ -9,4 +9,6 @@ public:
 
 	const char* GetName()const override { return "Play"; }
 	const char* GetNextState()const override { return "End"; }
+private:
+	class EnemyManegerActor* mEnemyManeger;
 };

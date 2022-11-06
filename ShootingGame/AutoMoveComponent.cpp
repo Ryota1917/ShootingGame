@@ -2,8 +2,8 @@
 #include"MoveActor.h"
 #include"Math.h"
 
-AutoMoveComponent::AutoMoveComponent(MoveActor* owner):
-	Component(owner),mOwner(owner),mTotalTime(0),mMoveWidth(300)
+AutoMoveComponent::AutoMoveComponent(MoveActor* owner, int moveWidth):
+	Component(owner),mOwner(owner),mTotalTime(0),mMoveWidth(moveWidth)
 {
 
 }
