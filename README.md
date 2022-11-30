@@ -9,4 +9,4 @@ AWSDで自分のプレイヤーを動かし，Spaceで弾を発射します．
 https://user-images.githubusercontent.com/64530020/204708851-1a38b84a-cebd-40f4-a4bb-0a0efa388ac3.mp4
 
 ## 使用させていただいたライブラリ
-- SDL2.0 (https://www.libsdl.org/)
+- SDL2.0 (https://www.libsdl.org/) libフォルダ，licludeフォルダ
