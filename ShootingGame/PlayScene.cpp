@@ -17,7 +17,7 @@ void PlayScene::OnEnter()
 	Game* game = mManeger->GetGame();
 
 	auto ps = new PlayerShip(game);
-	ps->SetHP(1);
+	ps->SetHP(3);
 
 	Actor* bg = new Actor(game);
 	new ScrollSpriteDrawerY(100.0f, "../Assets/star_map.png", bg, 10);
